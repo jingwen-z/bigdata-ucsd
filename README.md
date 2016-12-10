@@ -9,14 +9,11 @@ Center(SDSC).
 This specilization contains 6 courses as follows:
 
 - [Introduction to Big Data][Introduction]
-
 - [Big Data Modeling and Management Systems][Management]
-
 - [Big Data Integration and Processing][Integration and Processing]
-
 - [Machine Learning With Big Data][Machine Learning]
-
 - [Graph Analytics for Big Data][Graph Analytics]
+- [Big Data - Capstone Project][project]
 
 [Big Data specilization]: https://www.coursera.org/specializations/big-data
 [Introduction]: https://www.coursera.org/learn/big-data-introduction
@@ -24,3 +21,4 @@ This specilization contains 6 courses as follows:
 [Integration and Processing]: https://www.coursera.org/learn/big-data-integration-processing
 [Machine Learning]: https://www.coursera.org/learn/big-data-machine-learning
 [Graph Analytics]: https://www.coursera.org/learn/big-data-graph-analytics
+[project]: https://www.coursera.org/learn/big-data-project
