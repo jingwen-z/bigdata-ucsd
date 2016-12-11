@@ -19,12 +19,12 @@ The string `'Chesire` does not count)
 hadoop fs -copyFromLocal alice.txt
 
 # Run WordCount for alice.txt with "wordcount". As WordCount executes, the 
-Hadoop prints the progress in terms of Map and Reduce. When the `WordCount` is 
-complete, both will say 100%.
+# Hadoop prints the progress in terms of Map and Reduce. When the `WordCount` is 
+# complete, both will say 100%.
 hadoop jar /usr/jars/hadoop-examples.jar wordcount alice.txt count
 
 # Copy WordCount results to local file system. Here, the file part-r-00000 
-contains the results from WordCount.
+# contains the results from WordCount.
 hadoop fs –copyToLocal count/part-r-00000 count.txt
 
 # View the WordCount results.
@@ -47,5 +47,6 @@ application `wordmedian`. Thus, we only need to change one line code as follows.
 hadoop jar /usr/jars/hadoop-examples.jar wordmedian words.txt wordmedian
 
 # Note that wordmedian prints the median length to the terminal at the end of 
-the MapReduce job; the output file does not contain the median length.
+# the MapReduce job; the output file does not contain the median length.
 The median is: 4
+```
