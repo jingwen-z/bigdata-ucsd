@@ -6,7 +6,7 @@ Science Officer), _Amarnath Gupta_(Director, Advanced Query Processing Lab) and
 _Mai Nguyen_(Lead for Data Analytics), they all work in San Diego Supercomputer 
 Center(SDSC).
 
-This specilization contains 6 courses as follows:
+This specilization contains 6 following courses:
 
 - [Introduction to Big Data][Introduction]
 - [Big Data Modeling and Management Systems][Management]
