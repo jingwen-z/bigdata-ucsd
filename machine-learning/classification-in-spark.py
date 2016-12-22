@@ -12,9 +12,9 @@ from pyspark.ml.feature import VectorAssembler, StringIndexer, VectorIndexer
 
 sqlContext = SQLContext(sc)
 df = sqlContext.read.load('file:///home/cloudera/Downloads/big-data-4/daily_weather.csv',
-	                      format = 'com.databricks.spark.csv',
-	                      header = 'true',
-	                      inferSchema = 'true')
+                          format = 'com.databricks.spark.csv',
+                          header = 'true',
+                          inferSchema = 'true')
 df.columns
 
 featureColumns = ['air_pressure_9am',
@@ -39,8 +39,8 @@ df.count(), len(df.columns)
 # inputCol is the input column to read
 # outputCol is the name of the new categorical column
 binarizer = Binarizer(threshold = 24.99999,
-	                  inputCol = "relative_humidity_3pm",
-	                  outputCol = "label")
+                      inputCol = "relative_humidity_3pm",
+                      outputCol = "label")
 binarizedDF = binarizer.transform(df)
 
 binarizedDF.select("relative_humidity_3pm", "label").show(4)
@@ -61,10 +61,10 @@ trainingData.count(), testData.count()
 # number of samples in a node
 # impurity is the impurity measure used to split nodes
 dt = DecisionTreeClassifier(labelCol = "label",
-	                        featuresCol = "features",
-	                        maxDepth = 5,
-	                        minInstancesPerNode = 20,
-	                        impurity = "gini")
+                            featuresCol = "features",
+                            maxDepth = 5,
+                            minInstancesPerNode = 20,
+                            impurity = "gini")
 
 pipeline = Pipeline(stages = [dt])
 model = pipeline.fit(trainingData)
@@ -72,28 +72,5 @@ predictions = model.transform(testData)
 predictions.select("prediction", "label").show(10)
 
 predictions.select("prediction", "label").write.save(path = "file:///home/cloudera/Downloads/big-data-4/predictions.csv",
-	                                                 format = "com.databricks.spark.csv",
-	                                                 header = 'true')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                                     format = "com.databricks.spark.csv",
+                                                     header = 'true')
