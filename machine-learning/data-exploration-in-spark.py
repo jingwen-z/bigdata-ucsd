@@ -26,4 +26,4 @@ df.count()
 df2 = df.na.drop(subset = ['air_pressure_9am'])
 df2.count()
 
-df2.stat.corr("rain_accumulation_9am", "rain_duration_9am")
+df2.stat.corr('rain_accumulation_9am', 'rain_duration_9am')

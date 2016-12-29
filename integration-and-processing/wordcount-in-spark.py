@@ -4,14 +4,14 @@ Week 4 - Big Data processing tools and systems
 Hands-on - WordCount in Spark
 """
 
-lines = sc.textFile("hdfs:/user/cloudera/words.txt")
+lines = sc.textFile('hdfs:/user/cloudera/words.txt')
 lines.count()
 
 # split each line into words
 # flatMap() method iterates over every line in the RDD
 # lambda notation is an anonymous function in Python
-# lambda line : line.split(" ") is executed on each line
-words = lines.flatMap(lambda line: line.split(" "))
+# lambda line : line.split('') is executed on each line
+words = lines.flatMap(lambda line: line.split(''))
 words.take(5)
 
 
@@ -31,4 +31,4 @@ counts.take(5)
 # coalesce() method combines all the RDD partitions into a single partition
 # since we want a single output file
 # saveAsTextFile() writes the RDD to the specified location
-counts.coalesce(1).saveAsTextFile("hdfs:/user/cloudera/wordcount/outputDir")
+counts.coalesce(1).saveAsTextFile('hdfs:/user/cloudera/wordcount/outputDir')

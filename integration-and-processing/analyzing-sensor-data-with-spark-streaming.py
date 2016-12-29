@@ -6,7 +6,7 @@ Hands-on - Analyzing Sensor Data with Spark DataFrames
 
 import re
 def parse(line):
-	match = re.search("Dm=(\d+)", line)
+	match = re.search('Dm=(\d+)', line)
 	if match:
 		val = match.group(1)
 		return [int(val)]
@@ -16,7 +16,7 @@ from pyspark.streaming import StreamingContext
 ssc = StreamingContext(sc, 1)
 
 # create DStream of weather data
-lines = ssc.socketTextStream("rtd.hpwren.ucsd.edu", 12028)
+lines = ssc.socketTextStream('rtd.hpwren.ucsd.edu', 12028)
 
 # read measurement
 # using flatMap() to iterate over the lines DStream
@@ -37,7 +37,7 @@ window = vals.window(10, 5)
 def stats(rdd):
 	print(rdd.collect())
 	if rdd.count() > 0:
-		print("max = {}, min = {}",format(rdd.max(), rdd.min()))
+		print('max = {}, min = {}', format(rdd.max(), rdd.min()))
 
 # call the stats() function defined above for each RDD in the DStream window
 window.foreachRDD(lambda rdd: stats(rdd))

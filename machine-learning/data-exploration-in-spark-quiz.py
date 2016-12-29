@@ -24,4 +24,4 @@ df.count() - 1089
 
 # What is the correlation between the relative humidity at 9am and at 3pm (to 2 
 # decimal places, and without removing or imputing missing values)?
-df.stat.corr("relative_humidity_9am", "relative_humidity_3pm")
+df.stat.corr('relative_humidity_9am', 'relative_humidity_3pm')
