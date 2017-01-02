@@ -2,7 +2,7 @@
 
 In order to check if we really handle the `MapReduce` technique, there are two 
 following questions to be finished. Here I'll explain how to achieve them in 
-ternimal` shell step by step.
+ternimal shell step by step.
 
 ## Question 1
 
