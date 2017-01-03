@@ -1,7 +1,7 @@
 # Assignment: Querying and Exporting from MongoDB
 
 Imagine you are the Sports Analyst for a big magazine. The goal of this 
-assignment is to demonstrate my data-driven reporting skills and express the 
+assignment is to demonstrate your data-driven reporting skills and express the 
 following natural language questions as MongoDB queries on soccer-related tweets
  in English.
 
