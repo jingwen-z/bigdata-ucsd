@@ -2,7 +2,7 @@
 //
 // Hands On: Network Connectedness and Clustering Components
 
-// create a new graph by adding the Continents dataset
+/** create a new graph by adding the Continents dataset */
 Source.fromFile("./EOADATA/continent.csv").getLines().take(5).foreach(println)
 Source.fromFile("./EOADATA/country_continent.csv").getLines().take(5).
   foreach(println)
@@ -15,7 +15,7 @@ val continents: RDD[(VertexId, PlaceNode)] =
     map {line =>
       val row = line split ','
       (200L + row(0).toInt, Continent(row(1)))
-// Add 200 to the VertexId to keep the indexes unique
+      // add 200 to the VertexId to keep the indexes unique
     }
 
 val cclinks: RDD[Edge[Int]] =
@@ -30,11 +30,14 @@ val cnodes = metros ++ countries ++ continents
 val clinks = mclinks ++ cclinks
 val countriesGraph = Graph(cnodes, clinks)
 
-// import the GraphStream library
+/** import the GraphStream library */
 import org.graphstream.graph.implementations._
 
+// create a new instance of GraphStream's SingleGraph class
+// using the countriesGraph
 val graph: SingleGraph = new SingleGraph("countriesGraph")
 
+// set up the visual attributes for graph visualization
 graph.addAttribute("ui.stylesheet","url(file:.//style/stylesheet)")
 graph.addAttribute("ui.quality")
 graph.addAttribute("ui.antialias")
