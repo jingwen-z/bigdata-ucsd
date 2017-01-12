@@ -2,11 +2,11 @@
 //
 // Hands On: Plot the Degree Histogram
 
-// import the BreezeViz library
+/** import the BreezeViz library */
 import breeze.linalg._
 import breeze.plot._
 
-// define a function to calculate the degree histogram
+/** define a function to calculate the degree histogram */
 def degreeHistogram(net: Graph[PlaceNode, Int]): Array[(Int, Int)] =
   net.degrees.
     filter { case (vid, count) => vid >= 100 }.
@@ -14,14 +14,16 @@ def degreeHistogram(net: Graph[PlaceNode, Int]): Array[(Int, Int)] =
     groupByKey.map(t => (t._1,t._2.size)).
     sortBy(_._1).collect()
 
-// calculate the probability distribution for the degree histogram
+/** calculate the probability distribution for the degree histogram */
 val nn = metrosGraph.vertices.filter{ case (vid, count) => vid >= 100 }.count()
 
 val metroDegreeDistribution = 
   degreeHistogram(metrosGraph).
     map({case(d,n) => (d,n.toDouble/nn)})
 
-// graph the results
+/** graph the results */
+
+// plot degree distribution and the histogram of vertex degrees
 val f = Figure()
 val p1 = f.subplot(2,1,0)
 val x = new DenseVector(metroDegreeDistribution map (_._1.toDouble))
