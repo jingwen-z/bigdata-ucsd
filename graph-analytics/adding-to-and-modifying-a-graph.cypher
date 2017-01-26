@@ -1,9 +1,9 @@
-// adding a Node Correctly
+// adding a node correctly
 match (n: ToyNode {name: 'Julian'})
 merge (n)-[:ToyRelation {relationship: 'fiancee'}]
 ->(m: ToyNode {name: 'Joyce', job: 'store clerk'})
 
-// adding a Node Incorrectly
+// adding a node incorrectly
 create (n: ToyNode {name: 'Julian'})-[:ToyRelation {relationship: 'fiancee'}]
 ->(m: ToyNode {name: 'Joyce', job: 'store clerk'})
 
@@ -11,7 +11,7 @@ create (n: ToyNode {name: 'Julian'})-[:ToyRelation {relationship: 'fiancee'}]
 match (n: ToyNode {name: 'Joyce'})-[r]-(m)
 delete n, r, m
 
-// modify a Node’s Information
+// modify a node’s information
 match (n: ToyNode)
 where n.name = 'Harry'
 set n.job = 'drummer'
